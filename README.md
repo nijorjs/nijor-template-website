@@ -2,9 +2,10 @@
 ![Nijor](./app/static/images/logo.svg) <br>
 Nijor is a frontend web framework that helps you build websites with ease. <br>
 This is a template Nijor website. <br>
+## Get Started
 Clone this Template.
 ```Javascript
-npx degit JapiAxom/nijor-template-website my-nijor-project
+git clone https://github.com/JapiAxom/nijor-template-website my-nijor-project
 ```
 Then type
 ```Javascript
