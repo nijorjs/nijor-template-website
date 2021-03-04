@@ -1,6 +1,13 @@
 # Nijor
 ![Nijor](./app/static/images/logo.svg) <br>
 Nijor is a frontend web framework that helps you build websites with ease. <br>
+### Features:-
+* Custom HTML tags (Components) with  custom tag attributes (Specs).
+* Client-side Routing. (both Push-state & hash).
+* Scoped CSS/SCSS.
+* Supports SCSS out of the box.
+##### For the nijor source code, see [Nijor](https://github.com/JapiAxom/nijor)
+##### For the rollup plugin, see [Nijor-rollup-plugin](https://github.com/JapiAxom/nijor-rollup-plugin)
 This is a template Nijor website. <br>
 ## Get Started
 Clone this Template.
@@ -15,7 +22,7 @@ Start the server in one terminal.
 ```Javascript
 npm start
 ```
-Start the development compiler in another terminal. his will restart the compiler after any changes in .nijor and .js files
+Start the development compiler in another terminal. This will restart the compiler after any changes in .nijor and .js files
 ```Javascript
 npm run dev
 ```
