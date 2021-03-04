@@ -18,11 +18,11 @@ Then type
 ```Javascript
 npm install
 ```
-Start the server in one terminal.
+Start the server in one terminal:
 ```Javascript
 npm start
 ```
-Start the development compiler in another terminal. This will restart the compiler after any changes in .nijor and .js files
+Start the development compiler in another terminal. This will restart the compiler after any changes in .nijor and .js files:
 ```Javascript
 npm run dev
 ```
@@ -31,6 +31,7 @@ Or start the compiler using:
 npm run build
 ```
 This will not restart the compiler after changes in .nijor and .js files.
+##### Note: When you'll start the server for the first time, you would see nothing because you would first need to compile it.
 ##### Note: The compiler will issue some useless errors. But the Nijor files will be compiled and a message "Nijor Compilation Successful" will be printed in the console. This proeblem will be fixed in the future very soon.
 #### Author: DebAxom
 #### Email: debaxom@gmail.com

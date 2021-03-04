@@ -1,1 +1,4 @@
 node_modules
+app/static/app.js
+app/static/script.js
+app/static/style.css
