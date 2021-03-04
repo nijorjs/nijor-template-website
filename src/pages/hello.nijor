@@ -1,0 +1,32 @@
+<style>
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    button {
+        margin: 2rem;
+        background-color: #0099ff;
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        font-size: 1.8rem;
+        border-radius: 20px;
+        letter-spacing: 1.5px;
+        &:hover {
+            background-color: #00ffdd;
+        }
+    }
+    h1,p{color: white;letter-spacing: 1.5px;}
+</style>
+<template>
+    <div>
+        <h1>Hello World from Nijor!</h1>
+        <a n:route="/"><button>Home</button></a>
+        <p>For help refer to our <a href="https://github.com/JapiAxom/nijor" style="color:#0066f6;">Github Repo</a>.</p>
+    </div>
+</template>
+<script>
+</script>

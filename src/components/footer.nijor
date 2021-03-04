@@ -1,0 +1,19 @@
+<style>
+    div {
+        margin-top: auto;
+        width: 100vw;
+        background-color: white;
+        color: #0099ff;
+        text-align: center;
+        letter-spacing: 1.5px;
+    }
+    p{
+        font-size: larger;
+        font-weight: bolder;
+    }
+</style>
+<template>
+    <div>
+        <p>Nijor</p>
+    </div>
+</template>

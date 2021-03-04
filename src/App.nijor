@@ -1,0 +1,15 @@
+<header n:imported="components/header">
+<footer n:imported="components/footer">
+<style>
+    #n-routes{
+        margin-top: 5rem;
+    }
+</style>
+<template>
+    <header></header>
+        <div id="n-routes"></div>
+    <footer></footer>
+</template>
+<script>
+    document.body.style.backgroundColor="rgb(0, 0, 0, 0.918)";
+</script>

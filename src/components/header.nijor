@@ -1,0 +1,28 @@
+<style>
+    $color:#0099ff;
+    div {
+        width: 100vw;
+        height: 5rem;
+        background-color: $color;
+        padding: 5px;
+        h1 {
+            color: white;
+            text-align: center;
+            letter-spacing: 2.5px;
+            font-weight: lighter;
+        }
+    }
+</style>
+<template>
+    <div>
+        <h1 on:click="click()" on:dblclick="dbclick()">Nijor</h1>
+    </div>
+</template>
+<script>
+    function click(){
+        console.log('Clicked!');
+    }
+    function dbclick(){
+        console.log('DB_Clicked!');
+    }
+</script>
