@@ -4,7 +4,7 @@ Nijor is a frontend web framework that helps you build websites with ease. <br>
 This is a template Nijor website. <br>
 Clone this Template.
 ```Javascript
-npx degit JapiAxom/JapiAxom/nijor-template-website my-nijor-project
+npx degit JapiAxom/nijor-template-website my-nijor-project
 ```
 Then type
 ```Javascript
