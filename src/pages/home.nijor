@@ -26,9 +26,16 @@
     <div>
         <img src="/images/logo.svg">
         <p>Edit src directory to edit this page.</p>
-        <a n:route="/hello"><button>{msg}</button></a>
+        <a n:route="/hello"><button>{{msg}}</button></a>
     </div>
 </template>
 <script>
     let msg = 'Hello World!';
+</script>
+<script execute="post">
+    import ChangeView from 'nijor/views';
+    ChangeView('Welcome!','msg');
+    setTimeout(()=>{
+        ChangeView('Hello World!','msg');
+    },1000);
 </script>

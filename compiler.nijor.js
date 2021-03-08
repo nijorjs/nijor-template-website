@@ -13,6 +13,7 @@ let includePathOptions = {
         'nijor/router':'./node_modules/@nijor/nijor/src/router.js',
         'nijor/#router':'./node_modules/@nijor/nijor/src/hashrouter.js',
         'nijor/requests':'./node_modules/@nijor/nijor/src/requests.js',
+        'nijor/views':'./node_modules/@nijor/nijor/src/views.js',
     },
     paths: [srcPath],
     external: [],
@@ -49,6 +50,17 @@ let cssStyle = sass.renderSync({
     outputStyle:'compressed'
 });
 globalStyles = cssStyle.css.toString();
-fs.writeFile('./app/static/script.js',`"use strict";function fn_Nijorbind(element){var model=element.getAttribute('n-model');var newVal;if(element.tagName==="INPUT"){newVal = element.value;}else{newVal=element.innerHTML;}document.querySelectorAll('nijorview[view="'+model+'"]').forEach(function(child){child.innerHTML=newVal;});}`,()=>{});
+let fn_Nijorview = `
+    function fn_Nijorview(element){
+        var model=element.getAttribute('n-model');
+        var newVal;
+        if(element.tagName==="INPUT"){newVal = element.value;}
+        else{
+            newVal=element.innerHTML;
+        }
+        document.querySelectorAll('nijorview[view="'+model+'"]').forEach(function(child){child.innerHTML=newVal;})
+    }
+`.replace(/\s+/g,' ').trim();
+fs.writeFile('./app/static/script.js',`"use strict";${fn_Nijorview}`,()=>{});
 fs.writeFile('./app/static/style.css',globalStyles,()=>{});
 build();

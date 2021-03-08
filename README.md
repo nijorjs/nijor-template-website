@@ -7,14 +7,14 @@ Nijor is a frontend web framework that helps you build websites with ease. <br>
 * Scoped CSS/SCSS.
 * Supports SCSS out of the box.
 ##### For the nijor source code, see [Nijor](https://github.com/JapiAxom/nijor)
-##### For the rollup plugin, see [Nijor-rollup-plugin](https://github.com/JapiAxom/nijor-rollup-plugin)
+##### For the rollup plugin, see [nijor-rollup-plugin](https://github.com/JapiAxom/nijor-rollup-plugin)
 This is a template Nijor website. <br>
 ## Get Started
 Clone this Template.
 ```Javascript
 git clone https://github.com/JapiAxom/nijor-template-website my-nijor-project
 ```
-Then type
+Then type:
 ```Javascript
 npm install
 ```
