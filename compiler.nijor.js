@@ -61,6 +61,6 @@ let fn_Nijorview = `
         document.querySelectorAll('nijorview[view="'+model+'"]').forEach(function(child){child.innerHTML=newVal;})
     }
 `.replace(/\s+/g,' ').trim();
-fs.writeFile('./app/static/script.js',`"use strict";${fn_Nijorview}`,()=>{});
-fs.writeFile('./app/static/style.css',globalStyles,()=>{});
+fs.writeFileSync('./app/static/script.js',`"use strict";${fn_Nijorview}`);
+fs.writeFileSync('./app/static/style.css',globalStyles);
 build();

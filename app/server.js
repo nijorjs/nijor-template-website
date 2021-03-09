@@ -4,7 +4,7 @@ const path = require('path');
 const rootDir = __dirname;
 const staticDir = path.join(rootDir,'static');
 const hostname = '127.0.0.1';
-const port = 3000;
+const port = 5000;
 const server = http.createServer((req, res) => {
         if(req.url=="/index.html"){
             res.writeHead(302,{location:'/'});

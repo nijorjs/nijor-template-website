@@ -29,9 +29,6 @@
         <a n:route="/hello"><button>{{msg}}</button></a>
     </div>
 </template>
-<script>
-    let msg = 'Hello World!';
-</script>
 <script execute="post">
     import ChangeView from 'nijor/views';
     ChangeView('Welcome!','msg');
