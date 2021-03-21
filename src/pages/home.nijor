@@ -30,9 +30,9 @@
     </div>
 </template>
 <script execute="post">
-    import ChangeView from 'nijor/views';
-    ChangeView('Welcome!','msg');
+    import {setView} from 'nijor/views';
+    setView('Welcome!','msg');
     setTimeout(()=>{
-        ChangeView('Hello World!','msg');
+        setView('Hello World!','msg');
     },1000);
 </script>
