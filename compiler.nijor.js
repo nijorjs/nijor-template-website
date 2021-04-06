@@ -9,6 +9,7 @@ const NijorCompiler = require('@nijor/nijor-rollup-plugin');
 const srcPath = path.join(__dirname,'src');
 let includePathOptions = {
     include: {
+        'nijor':'./node_modules/@nijor/nijor/src/nijor.js',
         'nijor/components':'./node_modules/@nijor/nijor/src/components.js',
         'nijor/router':'./node_modules/@nijor/nijor/src/router.js',
         'nijor/#router':'./node_modules/@nijor/nijor/src/hashrouter.js',
