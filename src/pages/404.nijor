@@ -8,6 +8,7 @@
     a{
         color:#0099ff;
     }
+    h1,p{color:white;}
 </style>
 <template>
     <div>
