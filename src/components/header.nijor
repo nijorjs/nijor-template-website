@@ -15,14 +15,6 @@
 </style>
 <template>
     <div>
-        <h1 on:click="click()" on:dblclick="dbclick()">Nijor</h1>
+        <h1>Nijor</h1>
     </div>
 </template>
-<script>
-    function click(){
-        console.log('Clicked!');
-    }
-    function dbclick(){
-        console.log('DB_Clicked!');
-    }
-</script>

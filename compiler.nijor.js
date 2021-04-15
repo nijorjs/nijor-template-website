@@ -15,6 +15,7 @@ let includePathOptions = {
         'nijor/#router':'./node_modules/@nijor/nijor/src/hashrouter.js',
         'nijor/requests':'./node_modules/@nijor/nijor/src/requests.js',
         'nijor/views':'./node_modules/@nijor/nijor/src/views.js',
+        'nijor/events':'./node_modules/@nijor/nijor/src/nijor-events.js'
     },
     paths: [srcPath],
     external: [],
