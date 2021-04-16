@@ -18,6 +18,10 @@ Then CD into the new folder:
 ```
 cd my-nijor-project
 ```
+To uninitialize git repository:
+```
+rm -rf .git
+```
 Then type:
 ```
 npm install
@@ -36,7 +40,6 @@ npm run build
 ```
 This will not restart the compiler after changes in .nijor and .js files.
 ##### Note: When you'll start the server for the first time, you would see nothing because you would first need to compile it.
-##### Note: The compiler will issue some useless errors. But the Nijor files will be compiled and a message "Nijor Compilation Successful" will be printed in the console. This proeblem will be fixed in the future very soon.
 #### Author: DebAxom
 #### Email: debaxom@gmail.com
 #### (Guwahati,Assam)

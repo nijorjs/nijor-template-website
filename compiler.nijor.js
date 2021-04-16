@@ -9,13 +9,13 @@ const NijorCompiler = require('@nijor/nijor-rollup-plugin');
 const srcPath = path.join(__dirname,'src');
 let includePathOptions = {
     include: {
-        'nijor':'./node_modules/@nijor/nijor/src/nijor.js',
-        'nijor/components':'./node_modules/@nijor/nijor/src/components.js',
-        'nijor/router':'./node_modules/@nijor/nijor/src/router.js',
-        'nijor/#router':'./node_modules/@nijor/nijor/src/hashrouter.js',
-        'nijor/requests':'./node_modules/@nijor/nijor/src/requests.js',
-        'nijor/views':'./node_modules/@nijor/nijor/src/views.js',
-        'nijor/events':'./node_modules/@nijor/nijor/src/nijor-events.js'
+        'nijor':path.join(__dirname,'node_modules/@nijor/nijor/src/nijor.js'),
+        'nijor/components':path.join(__dirname,'node_modules/@nijor/nijor/src/components.js'),
+        'nijor/router':path.join(__dirname,'node_modules/@nijor/nijor/src/router.js'),
+        'nijor/#router':path.join(__dirname,'node_modules/@nijor/nijor/src/hashrouter.js'),
+        'nijor/requests':path.join(__dirname,'node_modules/@nijor/nijor/src/requests.js'),
+        'nijor/views':path.join(__dirname,'node_modules/@nijor/nijor/src/views.js'),
+        'nijor/events':path.join(__dirname,'node_modules/@nijor/nijor/src/events.js')
     },
     paths: [srcPath],
     external: [],
@@ -25,14 +25,14 @@ const inputOptions = {
     input:'src/App.js',
     plugins:[
         includePaths(includePathOptions),
-        NijorCompiler(__dirname),
-        babel.babel({ babelHelpers:'bundled',presets:['@babel/preset-env']}),
+        NijorCompiler(__dirname,includePathOptions),
+        //babel.babel({ babelHelpers:'bundled',presets:['@babel/preset-env']}),
         terser.terser()
     ]
 };
 const outputOptions = {
     file:'app/static/app.js',
-    format:'iife',
+    format:'es',
 };
 async function build() {
   const bundle = await rollup.rollup(inputOptions);
