@@ -25,8 +25,8 @@ const inputOptions = {
     input:'src/App.js',
     plugins:[
         includePaths(includePathOptions),
-        NijorCompiler(__dirname,includePathOptions),
-        //babel.babel({ babelHelpers:'bundled',presets:['@babel/preset-env']}),
+        NijorCompiler(__dirname),
+        babel.babel({ babelHelpers:'bundled',presets:['@babel/preset-env']}),
         terser.terser()
     ]
 };
@@ -35,6 +35,7 @@ const outputOptions = {
     format:'es',
 };
 async function build() {
+  console.log(`Nijor: Compiling the files.`);
   const bundle = await rollup.rollup(inputOptions);
   const { output } = await bundle.generate(outputOptions);
   for (const chunkOrAsset of output) {
@@ -44,7 +45,7 @@ async function build() {
   }
   await bundle.write(outputOptions);
   await bundle.close();
-  console.log('Nijor Compilation Successfull !');
+  console.log(`Nijor: Compiled all files successfully.`);
 }
 let globalStyles = fs.readFileSync('./src/styles/style.scss','utf-8');
 let cssStyle = sass.renderSync({
@@ -52,17 +53,5 @@ let cssStyle = sass.renderSync({
     outputStyle:'compressed'
 });
 globalStyles = cssStyle.css.toString();
-let fn_Nijorview = `
-    function fn_Nijorview(element){
-        var model=element.getAttribute('n-model');
-        var newVal;
-        if(element.tagName==="INPUT"){newVal = element.value;}
-        else{
-            newVal=element.innerHTML;
-        }
-        document.querySelectorAll('nijorview[view="'+model+'"]').forEach(function(child){child.innerHTML=newVal;})
-    }
-`.replace(/\s+/g,' ').trim();
-fs.writeFileSync('./app/static/script.js',`"use strict";${fn_Nijorview}`);
 fs.writeFileSync('./app/static/style.css',globalStyles);
 build();
