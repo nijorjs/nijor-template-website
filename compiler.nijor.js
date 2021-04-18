@@ -32,7 +32,7 @@ const inputOptions = {
 };
 const outputOptions = {
     file:'app/static/app.js',
-    format:'es',
+    format:'iife',
 };
 async function build() {
   console.log(`Nijor: Compiling the files.`);
