@@ -1,6 +1,5 @@
 const rollup = require('rollup');
 const includePaths = require('rollup-plugin-includepaths');
-const babel = require('@rollup/plugin-babel');
 const terser = require('rollup-plugin-terser');
 const fs = require('fs');
 const path = require('path');
@@ -26,7 +25,6 @@ const inputOptions = {
     plugins:[
         includePaths(includePathOptions),
         NijorCompiler(__dirname),
-        babel.babel({ babelHelpers:'bundled',presets:['@babel/preset-env']}),
         terser.terser()
     ]
 };
