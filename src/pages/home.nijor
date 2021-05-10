@@ -24,12 +24,15 @@
 </style>
 <template>
     <div>
-        <img src="/images/logo.svg">
+        <img src="{Logo}">
         <p>Edit src directory to edit this page.</p>
         <a n:route="/hello"><button>{{msg}}</button></a>
     </div>
 </template>
-<script execute="post">
+<script>
+    import Logo from 'images/logo.svg';
+</script>
+<script defer>
     import {setView} from 'nijor/views';
     setView('Welcome!','msg');
     setTimeout(()=>{
