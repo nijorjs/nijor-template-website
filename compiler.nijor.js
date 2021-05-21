@@ -52,17 +52,20 @@ const outputOptions = {
     format:'es',
 };
 async function build() {
+    let globalStyles = fs.readFileSync('./src/styles/style.scss','utf-8');
+    const cssStyle = sass.renderSync({
+        data:globalStyles,
+        outputStyle:'compressed'
+    });
+    globalStyles = cssStyle.css.toString();
+    fs.writeFileSync(compilerOptions.styleSheet,globalStyles);
     console.log(`Nijor: Compiling the files.`);
     const bundle = await rollup.rollup(inputOptions);
     await bundle.write(outputOptions);
     await bundle.close();
+    const outputFile = fs.readFileSync(outputOptions.file,'utf-8');
+    fs.writeFileSync(outputOptions.file,`;(function(){${outputFile}})();`);
     console.log(`Nijor: Compiled all files successfully.`);
 }
-let globalStyles = fs.readFileSync('./src/styles/style.scss','utf-8');
-const cssStyle = sass.renderSync({
-    data:globalStyles,
-    outputStyle:'compressed'
-});
-globalStyles = cssStyle.css.toString();
-fs.writeFileSync('./app/static/style.css',globalStyles);
+
 build();
