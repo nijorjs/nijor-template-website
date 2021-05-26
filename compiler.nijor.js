@@ -17,8 +17,7 @@ const includePathOptions = {
         'nijor/router':path.join(__dirname,'node_modules/@nijor/nijor/src/router.js'),
         'nijor/#router':path.join(__dirname,'node_modules/@nijor/nijor/src/hashrouter.js'),
         'nijor/requests':path.join(__dirname,'node_modules/@nijor/nijor/src/requests.js'),
-        'nijor/views':path.join(__dirname,'node_modules/@nijor/nijor/src/views.js'),
-        'nijor/events':path.join(__dirname,'node_modules/@nijor/nijor/src/events.js')
+        'nijor/views':path.join(__dirname,'node_modules/@nijor/nijor/src/views.js')
     },
     paths: [srcPath],
     external: [],
