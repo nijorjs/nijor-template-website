@@ -8,17 +8,11 @@ const {nodeResolve} = require('@rollup/plugin-node-resolve');
 const cjs = require('@rollup/plugin-commonjs');
 const image = require('@rollup/plugin-image');
 const asyncFn = require('rollup-plugin-async');
+const nijor = require('@nijor/nijor');
 const NijorCompiler = require('@nijor/nijor-rollup-plugin');
 const srcPath = path.join(__dirname,'src');
 const includePathOptions = {
-    include: {
-        'nijor':path.join(__dirname,'node_modules/@nijor/nijor/src/nijor.js'),
-        'nijor/components':path.join(__dirname,'node_modules/@nijor/nijor/src/components.js'),
-        'nijor/router':path.join(__dirname,'node_modules/@nijor/nijor/src/router.js'),
-        'nijor/#router':path.join(__dirname,'node_modules/@nijor/nijor/src/hashrouter.js'),
-        'nijor/requests':path.join(__dirname,'node_modules/@nijor/nijor/src/requests.js'),
-        'nijor/views':path.join(__dirname,'node_modules/@nijor/nijor/src/views.js')
-    },
+    include: nijor,
     paths: [srcPath],
     external: [],
     extensions: ['.js','.nijor','.svg','.jpg','.png']
