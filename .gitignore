@@ -1,3 +1,4 @@
 node_modules
 app/static/app.js
 app/static/style.css
+update.sh
