@@ -37,7 +37,7 @@ const inputOptions = {
         NijorCompiler(compilerOptions),
         asyncFn(),
         image(),
-        terser()
+        // terser()
     ]
 };
 const outputOptions = {
