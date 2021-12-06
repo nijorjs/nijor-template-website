@@ -1,4 +1,4 @@
-# Nijor
+# Nijor4
 ![Nijor](./src/images/logo.svg) <br>
 Nijor is a frontend web framework that helps you build websites with ease. <br>
 ### Features:-
