@@ -29,7 +29,7 @@ const compilerOptions = {
     Style
 }
 const inputOptions = {
-    input:'src/App.js',
+    input:path.join(__dirname,'src/App.js'),
     plugins:[
         includePaths(includePathOptions),
         nodeResolve(),
@@ -37,19 +37,15 @@ const inputOptions = {
         NijorCompiler(compilerOptions),
         asyncFn(),
         image(),
-        // terser()
+        terser()
     ]
 };
 const outputOptions = {
-    file:'app/static/app.js',
+    file:path.join(__dirname,'app/static/app.js'),
     format:'es',
 };
 async function build() {
-    let globalStyles = fs.readFileSync('./src/styles/style.scss','utf-8');
-    const cssStyle = sass.renderSync({
-        data:globalStyles,
-        outputStyle:'compressed'
-    });
+    var cssStyle = sass.renderSync({file:path.join(__dirname,'src/styles/style.scss'),outputStyle:'compressed'});
     globalStyles = cssStyle.css.toString();
     fs.writeFileSync(compilerOptions.styleSheet,globalStyles);
     console.log(`Nijor: Compiling the files.`);
@@ -60,5 +56,4 @@ async function build() {
     fs.writeFileSync(outputOptions.file,`;(function(){${outputFile}})();`);
     console.log(`Nijor: Compiled all files successfully.`);
 }
-
 build();

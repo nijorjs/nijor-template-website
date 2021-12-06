@@ -11,8 +11,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@nijor/nijor": "^1.5.4",
-    "@nijor/nijor-rollup-plugin": "^1.4.6",
+    "@nijor/nijor": "^1.5.5",
+    "@nijor/nijor-rollup-plugin": "^1.4.7",
     "@rollup/plugin-commonjs": "^18.0.0",
     "@rollup/plugin-image": "^2.0.6",
     "@rollup/plugin-node-resolve": "^11.2.1",
