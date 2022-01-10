@@ -6,9 +6,10 @@ const staticDir = path.join(rootDir,'static');
 const hostname = '127.0.0.1';
 const port = 3000;
 
-const page = fs.readFileSync(path.join(staticDir,'index.html'),'utf-8');
-
 const server = http.createServer((req, res) => {
+
+        const page = fs.readFileSync(path.join(staticDir,'index.html'),'utf-8');
+
         if(req.url=="/index.html"){
             res.writeHead(302,{location:'/'});
             res.end();
